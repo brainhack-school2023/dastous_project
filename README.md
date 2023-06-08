@@ -64,7 +64,7 @@ During the BrainHack project, I have set up 4 different tests located under [tes
 
 Now that the plugin can be launched, I wanted to test that it was properly initialized. The first thing a user might want to do when opening up Shimming Toolbox is to change tabs. So I wrote a test that makes sure that the tabs that should be there are indeed initialized.
 
-The third and last test that I wrote goes into much more detail to make sure that the plugin can call Shimming Toolbox's command line functions. I chose the DICOM to NIfTI functionality of Shimming Toolbox as this is the first step in most processing pipelines. To test this functionality, I needed DICOM data. Luckily, a lightweight repository containing DICOMs was previously set up in the Shimming Toolbox [organization](https://github.com/shimming-toolbox). I created a [configuration file for pytest](tests/conftest.py) that will be ran first whenever Pytest is invoked. The configuration file was set up to automatically download this testing repository before running tests and ensuring that the user has the appropriate data to run them. After that, I could set up the test to change to the DICOM to NIfTI tab (a tab available in the plugin), look for specific buttons in the user interface, fill them with appropriate values and press the run button to start the command. The test then waits for images to show in the FSLeyes overlay signifying that the command was executed successfully.
+The third and last test that I wrote goes into much more detail to make sure that the plugin can call Shimming Toolbox's command line functions. I chose the DICOM to NIfTI functionality of Shimming Toolbox as this is the first step in most processing pipelines. To test this functionality, I needed DICOM data. Luckily, a lightweight repository containing DICOMs was previously set up in the Shimming Toolbox [organization](https://github.com/shimming-toolbox). I created a [configuration file for pytest](tests/conftest.py) that will be ran first whenever pytest is invoked. The configuration file was set up to automatically download this testing repository before running tests and ensuring that the user has the appropriate data to run them. After that, I could set up the test to change to the DICOM to NIfTI tab (a tab available in the plugin), look for specific buttons in the user interface, fill them with appropriate values and press the run button to start the command. The test then waits for images to show in the FSLeyes overlay signifying that the command was executed successfully.
 
 Although more unit and GUI tests are needed to test more of the specific functionalities, this is a good start that will make sure in the future new functionalities are well tested. Even though this is only four tests, I ran a coverage report that looks at how many lines of code are covered by the tests out of the total number of lines in the project. 81% of the lines in the project were ran during the tests and a report of the individual files is shown in the following image. Overall, this does not mean that 81% of the code is fully tested but that 81% of the lines ran did not cause a crash or succeeded in achieving the desired outputs defined in the tests. However, it is a good start.
 
@@ -96,7 +96,7 @@ Among other things, pre-commit will:
 * Check if there are merge conflicts
 * Check GitHub actions config files
 
-To locally check these specific things, I have included a [local cofiguration file](other/.pre-commit-config.yaml) in the plugin repository that will reject a commit if a requirement is not met. I have also included a GitHub Actions [configuration file](github_actions/pre-commit.yml) that will look at the commit and throw an error if there is a requirement that is not met on a push to the repository.
+To locally check these specific things, I have included a [local configuration file](other/.pre-commit-config.yaml) in the plugin repository that will reject a commit if a requirement is not met. I have also included a GitHub Actions [configuration file](github_actions/pre-commit.yml) that will look at the commit and throw an error if there is a requirement that is not met on a push to the repository.
 
 #### Deliverable 3: Dockerfile
 
@@ -122,23 +122,6 @@ The tests will launch and should display a similar image as the following one ex
 
 ## Conclusion and acknowledgement
 
-I have learned a lot throughout the project. I developed my skills using many different software including Pytest, GitHub Actions, pre-commit, Docker and many more. I was able to successfully implement a testing environment for the GUI of Shimming Toolbox. In the future, these tests will make sure that less bugs slip through the cracks. This will save developers time and will provide a better user experience. However, there are some limitation to this project. Tests are only performed on Linux since I was not able to find a comparable solution to Xvfb which does not seem to work for MacOS. Therefore MacOS is not automatically tested and should be in the future. Moreover, more tests are required to properly make sure the plugin works. These will need to be implemented in the future.
+I have learned a lot throughout the project. I developed my skills using many different software including pytest, GitHub Actions, pre-commit, Docker and many more. I was able to successfully implement a testing environment for the GUI of Shimming Toolbox. In the future, these tests will make sure that less bugs slip through the cracks. This will save developers time and will provide a better user experience. However, there are some limitation to this project. Tests are only performed on Linux since I was not able to find a comparable solution to Xvfb which does not seem to work for MacOS. Therefore MacOS is not automatically tested and should be in the future. Moreover, more tests are required to properly make sure the plugin works. These will need to be implemented in the future.
 
 Overall, BrainHack school was an amazing experience where I learned a lot and recommend to others seeking to learn about open-science.
-
-## References
-
-D'Astous A, Cereza G, Papp D, Gilbert KM, Stockmann JP, Alonso-Ortiz E, Cohen-Adad J. Shimming toolbox: An open-source software toolbox for B0 and B1 shimming in MRI. Magn Reson Med. 2022; 1-17. doi:10.1002/mrm.29528
-
-McCarthy P. FSLeyes. 2019.
-
-dcm2niix
-
-dcm2bids
-
-TODO:
-- Check spelling of pytest
-- Check spelling of precommit
-- Add links
-- Add img
-- REFS
