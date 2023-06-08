@@ -45,10 +45,12 @@ This project relies on the following tools:
     * [Docker](https://www.docker.com) to create containers to locally launch the tests for linux
     * GitHub
 
-<img src="img/pytest.png" width="50" height="50">
-<img src="img/github_actions.png" width="50" height="50">
-<img src="img/docker.png" width="50" height="50">
-<img src="img/github.png" width="50" height="50">
+<p float="left">
+    <img alt="=Pytest logo" src="img/pytest.png" width="50" height="50">
+    <img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50">
+    <img alt="Docker logo" src="img/docker.png" width="50" height="50">
+    <img alt="GitHub logo" src="img/github.png" width="50" height="50">
+</p>
 
 ### Data
 
