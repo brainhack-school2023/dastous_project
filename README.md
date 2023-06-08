@@ -38,7 +38,7 @@ This will allow to prevent future software bugs, reduce maintenance time and imp
 
 This project relies on the following tools:
 
-* ![pytest logo](img/pytest.png | width=50px) [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests
+* <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests
 * [Github Actions](https://docs.github.com/en/actions) to automatically:
     * Launch the tests
     * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards (these will be described below)
