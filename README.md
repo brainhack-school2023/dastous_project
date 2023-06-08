@@ -36,14 +36,14 @@ This will allow to prevent future software bugs, reduce maintenance time and imp
 
 ### Tools
 
-This project relies on the following tools: <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> <a href="url"><img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50"></a> <a href="url"><img alt="Docker logo" src="img/docker.png" width="50" height="50"></a> <a href="url"><img alt="GitHub logo" src="img/github.png" width="50" height="50"></a>
+This project relies on the following tools: <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> <a href="url"><img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50"></a> <a href="url"><img alt="Pre-commit logo" src="img/pre-commit.svg" width="50" height="50"></a> <a href="url"><img alt="Docker logo" src="img/docker.png" width="50" height="50"></a> <a href="url"><img alt="GitHub logo" src="img/github.png" width="50" height="50"></a>
 
 * [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests.
 * [Github Actions](https://docs.github.com/en/actions) to automatically:
     * Launch the tests.
     * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards (these will be described below).
 * [Docker](https://www.docker.com) to create containers to locally launch the tests for linux.
-* GitHub to version control and host this document.
+* [GitHub](https://github.com) to version control and host this document.
 
 ### Data
 
