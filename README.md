@@ -12,7 +12,9 @@ To do so, I have written an open-source toolbox ([Shimming Toolbox](https://shim
 
 [Shimming Toolbox](https://shimming-toolbox.org/en/latest/) is version controlled in this [GitHub repository](https://github.com/shimming-toolbox/shimming-toolbox). The toolbox can be installed on a computer and can perform DICOM conversion to NIfTI, create masks, compute B0 field maps, compute B1 shimming coefficients and compute B0 shimming coefficients. All these features can be performed for already acquired data or directly while acquiring at the MRI scanner. The following figure visually shows the main features of Shimming Toolbox.
 
-<img src="https://raw.githubusercontent.com/shimming-toolbox/doc-figures/master/overview/overview.gif"alt="Shimming Toolbox Overview"style="float: left; margin-right: 10px;"/>
+<img src="https://raw.githubusercontent.com/shimming-toolbox/doc-figures/master/overview/overview.gif"
+    alt="Shimming Toolbox Overview"
+    style="float: left; margin-right: 10px;"/>
 
 To make sure the toolbox performs as expected, it is important to write tests for the various code functions. These tests are called unit tests and make sure that the expected output of small pieces of code give specific outputs. Another form of test, called integration tests, test broader functionalities and make sure small functions can be linked together to perform an expected functionality. Both of these make sure a code base have the expected functionalities, but also make sure that these functionalities and output remain through time if there are code changes, new functionalities, library updates and more. While setting up those tests require a good time investment, it is worthwhile in the long run as it will catch software bugs so improve the user experience and also reduce time spent fixing these bugs.
 
