@@ -47,14 +47,14 @@ This project relies on the following tools: <a href="url"><img alt="=Pytest logo
 
 ### Data
 
-This project is unusual in the sense that the Shimming Toolbox's GUI code is the main part of the data used for this project. The different tests, CI pipelines and Docker containers will have as data the GUI code itself. For some more involved tests where shimming data is required, Shimming Toolbox already has a [testing data repository](https://github.com/shimming-toolbox/data-testing) where lightweight "somewhat" BIDS compliant data as well as DICOM files that can be used.
+This BranHack project is unusual because the Shimming Toolbox's GUI code is the main part of the data used for this project. The different tests, CI pipelines and Docker containers will have as data the GUI code itself. For some more involved tests where shimming data is required, Shimming Toolbox already has a [testing data repository](https://github.com/shimming-toolbox/data-testing) where lightweight "somewhat" BIDS compliant data as well as DICOM files can be used.
 
 ### Deliverables
 
 The different deliverables of this project include:
- * Unit and integration tests that have been implemented in the Shimming Toolbox GUI [repository](https://github.com/shimming-toolbox/fsleyes-plugin-shimming-toolbox). These tests have been copied in this repository under */tests*
- * GitHub Actions configuration files that can run the previous tests and prevent unwanted commits (e.g., large files, merge conflicts, etc). The configuration files for the GUI repository is included in this repository under */github_actions*
- * A Dockerfile to set up images with Shimming Toolbox installed able to run the tests. Similarly, the file that resides in the Shimming Toolbox's GUI repository is included under the folder */docker*
+    * Unit and integration tests that have been implemented in the Shimming Toolbox GUI [repository](https://github.com/shimming-toolbox/fsleyes-plugin-shimming-toolbox). These tests have been copied in this repository under [/tests](/tests)
+    * GitHub Actions configuration files that can run the previous tests and prevent unwanted commits (e.g., large files, merge conflicts, etc). The configuration files for the GUI repository is included in this repository under */github_actions*
+    * A Dockerfile to set up images with Shimming Toolbox installed able to run the tests. Similarly, the file that resides in the Shimming Toolbox's GUI repository is included under the folder */docker*
 
 [ADD LINK TO THE DIFFERENT FOLDERS]
 
