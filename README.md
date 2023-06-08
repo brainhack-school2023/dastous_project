@@ -28,9 +28,9 @@ Shimming Toolbox is separated in two repositories. The main one includes the mai
 
 The main objective of this project is to improve the testing pipeline and capabilities of Shimming Toolbox’s GUI repository. The main objectives are described below.
 
-* Implement tests for various pieces of code
-* Set up continuous integration to automatically perform the tests
-* Set up containers to test the GUI locally on different platforms
+* Implement tests for various pieces of code.
+* Set up continuous integration to automatically perform the tests.
+* Set up containers to test the GUI locally on different platforms.
 
 This will allow to prevent future software bugs, reduce maintenance time and improve the user experience.
 
@@ -38,12 +38,12 @@ This will allow to prevent future software bugs, reduce maintenance time and imp
 
 This project relies on the following tools: <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> <a href="url"><img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50"></a> <a href="url"><img alt="Docker logo" src="img/docker.png" width="50" height="50"></a> <a href="url"><img alt="GitHub logo" src="img/github.png" width="50" height="50"></a>
 
-* [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests
+* [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests.
 * [Github Actions](https://docs.github.com/en/actions) to automatically:
-    * Launch the tests
-    * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards (these will be described below)
-* [Docker](https://www.docker.com) to create containers to locally launch the tests for linux
-* GitHub
+    * Launch the tests.
+    * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards (these will be described below).
+* [Docker](https://www.docker.com) to create containers to locally launch the tests for linux.
+* GitHub to version control and host this document.
 
 ### Data
 
@@ -52,11 +52,9 @@ This BranHack project is unusual because the Shimming Toolbox's GUI code is the 
 ### Deliverables
 
 The different deliverables of this project include:
-* Unit and integration tests that have been implemented in the Shimming Toolbox GUI [repository](https://github.com/shimming-toolbox/fsleyes-plugin-shimming-toolbox). These tests have been copied in this repository under [/tests](/tests)
-* GitHub Actions configuration files that can run the previous tests and prevent unwanted commits (e.g., large files, merge conflicts, etc). The configuration files for the GUI repository is included in this repository under */github_actions*
-* A Dockerfile to set up images with Shimming Toolbox installed able to run the tests. Similarly, the file that resides in the Shimming Toolbox's GUI repository is included under the folder */docker*
-
-[ADD LINK TO THE DIFFERENT FOLDERS]
+* Unit and integration tests that have been implemented in the Shimming Toolbox GUI [repository](https://github.com/shimming-toolbox/fsleyes-plugin-shimming-toolbox). These tests have been copied in this repository under [dastous_project/tests/](dastous_project/tests/).
+* GitHub Actions configuration files that can run the previous tests and prevent unwanted commits (e.g., large files, merge conflicts, etc). The configuration files for the GUI repository is included in this repository under [dastous_project/github_actions/](dastous_project/github_actions/) and will be explained further below.
+* A Dockerfile to set up images with Shimming Toolbox installed able to run the tests. Similarly, the file that resides in the Shimming Toolbox's GUI repository is included under the folder [dastous_project/docker](dastous_project/docker).
 
 ### Results
 
