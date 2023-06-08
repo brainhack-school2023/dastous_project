@@ -36,7 +36,7 @@ This will allow to prevent future software bugs, reduce maintenance time and imp
 
 ### Tools
 
-This project relies on the following tools: <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> <a href="url"><img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50"></a> <a href="url"><img alt="Pre-commit logo" src="img/pre-commit.svg" width="50" height="50"></a> <a href="url"><img alt="Docker logo" src="img/docker.png" width="50" height="50"></a> <a href="url"><img alt="GitHub logo" src="img/github.png" width="50" height="50"></a>
+This project relies on the following tools: <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> <a href="url"><img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50"></a> <a><img alt="Pre-commit logo" src="img/pre-commit.svg" width="50" height="50"></a> <a href="url"><img alt="Docker logo" src="img/docker.png" width="50" height="50"></a> <a href="url"><img alt="GitHub logo" src="img/github.png" width="50" height="50"></a>
 
 * [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests.
 * [Github Actions](https://docs.github.com/en/actions) to automatically:
