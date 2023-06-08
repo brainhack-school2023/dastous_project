@@ -39,18 +39,11 @@ This will allow to prevent future software bugs, reduce maintenance time and imp
 This project relies on the following tools:
 
 * <a href="url"><img alt="=Pytest logo" src="img/pytest.png" width="50" height="50"></a> [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests
-* [Github Actions](https://docs.github.com/en/actions) to automatically:
+* <a href="url"><img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50"></a> [Github Actions](https://docs.github.com/en/actions) to automatically:
     * Launch the tests
     * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards (these will be described below)
-* [Docker](https://www.docker.com) to create containers to locally launch the tests for linux
-* GitHub
-
-<p float="left">
-    <img alt="=Pytest logo" src="img/pytest.png" width="50" height="50">
-    <img alt="Github Actions logo" src="img/github_actions.png" width="50" height="50">
-    <img alt="Docker logo" src="img/docker.png" width="50" height="50">
-    <img alt="GitHub logo" src="img/github.png" width="50" height="50">
-</p>
+* <a href="url"><img alt="Docker logo" src="img/docker.png" width="50" height="50"></a> [Docker](https://www.docker.com) to create containers to locally launch the tests for linux
+* <a href="url"><img alt="GitHub logo" src="img/github.png" width="50" height="50"></a> GitHub
 
 ### Data
 
