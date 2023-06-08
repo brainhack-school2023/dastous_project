@@ -2,9 +2,7 @@
 
 ## About Me
 
-I am a PhD student at Polytechnique in Montreal where I am in Biomedical Engineering.
-My area of research revolves around improving the homogeneity of the main magnetic field (B0 shimming) in Magnetic Resonance Imaging (MRI).
-To do so, I have written an open-source toolbox ([Shimming Toolbox](https://shimming-toolbox.org/en/latest/)) that allows to perform shimming calculations.
+I am a PhD student at Polytechnique in Montreal where I am in Biomedical Engineering. My area of research revolves around improving the homogeneity of the main magnetic field (B0 shimming) in Magnetic Resonance Imaging (MRI). To do so, I have written an open-source toolbox ([Shimming Toolbox](https://shimming-toolbox.org/en/latest/)) that allows to perform shimming calculations.
 
 ## Project Definition
 
@@ -16,17 +14,20 @@ To do so, I have written an open-source toolbox ([Shimming Toolbox](https://shim
     alt="Shimming Toolbox Overview"
     style="float: left; margin-right: 10px;"/>
 
-To make sure the toolbox performs as expected, it is important to write tests for the various code functions. These tests are called unit tests and make sure that the expected output of small pieces of code give specific outputs. Another form of test, called integration tests, test broader functionalities and make sure small functions can be linked together to perform an expected functionality. Both of these make sure a code base have the expected functionalities, but also make sure that these functionalities and output remain through time if there are code changes, new functionalities, library updates and more. While setting up those tests require a good time investment, it is worthwhile in the long run as it will catch software bugs so improve the user experience and also reduce time spent fixing these bugs.
+To make sure the toolbox performs as expected, it is important to write tests for the various code functions. These tests are called unit tests and make sure that the expected output of small pieces of code give specific, pre-determined outputs. Another form of test, called integration tests, test broader functionalities and make sure small functions can be linked together to perform an expected functionality. Both of these make sure a code base has the expected functionalities, but also make sure that these functionalities and output remain through time if there are code changes, new functionalities, library updates and more. While setting up those tests require a good time investment, it is worthwhile in the long run as it will catch software bugs and therefore improve user experience and also reduce time spent fixing these bugs.
 
-Although it is possible to manually launch the tests on a local machine at every change of the code, it is much more valuable to set up a Continuous Integration (CI) pipeline that will automatically launch these tests on every push to the GitHub repository. This removes a burden on the developper, it makes sure that these tests are run systematically and provide a tracking history of what works and what does not.
+Although it is possible to manually launch the tests on a local machine at every change of the code, it is much more valuable to set up a continuous integration (CI) pipeline that will automatically launch these tests on every push to the GitHub repository. This removes a burden on the developer, it makes sure that these tests are run systematically and provide a tracking history of what works and what does not.
 
-Shimming Toolbox is separated in two repositories. The main one include the main functionalities and allow a user to run them from the command line and includes many CI features such as tests and automation with GitHub Actions. A separate repository adds a graphical user interface (GUI) as a plugin to the popular NIfTI viewer [FSLeyes](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes) and is shown in the following image. The Shimming Toolbox GUI [repository](https://github.com/shimming-toolbox/fsleyes-plugin-shimming-toolbox) does not contain many CI features and will be the one I will be improving in this BrainHack project. A challenge of this repository is that most of the code is for the GUI which makes it a lot more difficult to test, especially on platforms that do not have displays.
+Shimming Toolbox is separated in two repositories. The main one includes the main functionalities and allow a user to run them from the command line and includes many CI features such as tests and automation with GitHub Actions. A separate repository adds a graphical user interface (GUI) as a plugin to the popular NIfTI viewer [FSLeyes](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes) and is shown in the following image. The Shimming Toolbox GUI [repository](https://github.com/shimming-toolbox/fsleyes-plugin-shimming-toolbox) does not contain many CI features and will be the one I will be improving in this BrainHack project. A challenge of this repository is that most of the code is for the GUI which makes it a lot more difficult to test, especially on platforms that do not have displays.
 
-[INSERT FSLEYES SHIMMING TOOLBOX GUI FIGURE]
+<img src="https://raw.githubusercontent.com/shimming-toolbox/doc-figures/master/fsleyes/fsleyes_example.png"
+    alt="Shimming Toolbox Overview"
+    style="float: left; margin-right: 10px;"/>
 
 ### Objectives
 
-The main objective of this project is to improve the testing pipeline and capabilities of Shimming Toolbox’s GUI repository. To do so, the
+The main objective of this project is to improve the testing pipeline and capabilities of Shimming Toolbox’s GUI repository. The main objectives are described below.
+
 * Implement tests for various pieces of code
 * Set up continuous integration to automatically perform the tests
 * Set up containers to test the GUI locally on different platforms
@@ -36,14 +37,17 @@ This will allow to prevent future software bugs, reduce maintenance time and imp
 ### Tools
 
 This project relies on the following tools:
- * [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests
- * [Github Actions](https://docs.github.com/en/actions) to automatically:
-  * Launch the tests
-  * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards
- * [Docker](https://www.docker.com) to create containers to locally launch the tests for linux
- * GitHub
+    * [Pytest](https://docs.pytest.org/en/7.3.x/contents.html) to write and setup unit and integration tests <img src="img/pytest.png" width="50" height="50">
+    * [Github Actions](https://docs.github.com/en/actions) to automatically:
+        * Launch the tests
+        * Launch [pre-commit](https://pre-commit.com) to verify that commits meet certain standards (these will be described below)
+    * [Docker](https://www.docker.com) to create containers to locally launch the tests for linux
+    * GitHub
 
-[INSERT ICONS]
+<img src="img/pytest.png" width="50" height="50">
+<img src="img/github_actions.png" width="50" height="50">
+<img src="img/docker.png" width="50" height="50">
+<img src="img/github.png" width="50" height="50">
 
 ### Data
 
