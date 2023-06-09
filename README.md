@@ -47,7 +47,7 @@ This project relies on the following tools: <a href="https://docs.pytest.org/en/
 
 ### Data
 
-This BranHack project is unusual because the Shimming Toolbox's GUI code is the main part of the data used for this project. The different tests, CI pipelines and Docker containers will have as data the GUI code itself. For some more involved tests where shimming data is required, Shimming Toolbox already has a [testing data repository](https://github.com/shimming-toolbox/data-testing) where lightweight "somewhat" BIDS compliant data as well as DICOM files can be used.
+This BrainHack project is unusual because the Shimming Toolbox's GUI code is the main part of the data used for this project. The different tests, CI pipelines and Docker containers will have as data the GUI code itself. For some more involved tests where shimming data is required, Shimming Toolbox already has a [testing data repository](https://github.com/shimming-toolbox/data-testing) where lightweight "somewhat" BIDS compliant data as well as DICOM files can be used.
 
 ### Deliverables
 
@@ -60,7 +60,7 @@ The different deliverables of this project include:
 
 #### Deliverable 1: Tests
 
-During the BrainHack project, I have set up 4 different tests located under [tests/](tests/). [The first one](tests/test_functions.py) is a unit test that makes sure a particular function works properly. [The three other tests](tests/gui/test_tabs.py) make sure that the GUI works as expected. These GUI tests are more challenging to implement since they cannot easily be tested without launching the whole application, in my case, FSLeyes. Therefore the first step was to figure out how to first launch FSLeyes so that the plugin which I am testing can also be launched. Since FSLeyes is also open source, I investigated how their testing pipeline worked so I could see how they perform their tests. I ended up including and modifying a [file](tests/__init__.py) that contains functions to launch FSLeyes run functions inside of the GUI. I then set up some code to properly launch the Shimming Toolbox plugin. This is the first GUI test where it makes sure that loading the plugin does not crash.
+During the BrainHack project, I have set up 4 different tests located under [tests/](tests/). [The first one](tests/test_functions.py) is a unit test that makes sure a particular function works properly. [The three other tests](tests/gui/test_tabs.py) make sure that the GUI works as expected. These GUI tests are more challenging to implement since they cannot easily be tested without launching the whole application, in my case, FSLeyes. Therefore the first step was to figure out how to first launch FSLeyes so that the plugin which I am testing can also be launched. Since FSLeyes is also open source, I investigated how their testing pipeline worked so I could see how they perform their tests. I ended up including and modifying a [file](tests/__init__.py) that contains functions to launch FSLeyes and run functions inside of the GUI. I then set up some code to properly launch the Shimming Toolbox plugin. This is the first GUI test where it makes sure that loading the plugin does not crash.
 
 Now that the plugin can be launched, I wanted to test that it was properly initialized. The first thing a user might want to do when opening up Shimming Toolbox is to change tabs. So I wrote a test that makes sure that the tabs that should be there are indeed initialized.
 
@@ -80,7 +80,7 @@ pythonw -m pytest
 
 ##### GitHub Actions for launching Tests
 
-Now that the tests are written, it is important to set up a pipeline to automatically run them on a server. This can be done using Github Actions. A [configuration file](github_actions/tests.yml) was set up to automatically perform the following actions on two Ubuntu machines. It first installs the plugin by downloading an installing FSLeyes, Shimming Toolbox, the plugin and the required dependencies of each package. The tests can then be launched. However, since a GUI is being tested and that the server used to run these tests does not have a screen, we need one last tool to simulate a virtual screen. This tool is X virtual frame buffer ([xvfb-run](https://manpages.ubuntu.com/manpages/xenial/man1/xvfb-run.1.html)) and allows a headless (no screen) Linux computer to run GUI applications even if it does not have a display. Using the following, the tests can be launched and will make sure that on every push to the repository that the tests will launch.
+Now that the tests are written, it is important to set up a pipeline to automatically run them on a server. This can be done using Github Actions. A [configuration file](github_actions/tests.yml) was set up to automatically perform the following actions on two Ubuntu machines. It first installs the plugin by downloading and installing FSLeyes, Shimming Toolbox, the plugin and the required dependencies of each package. The tests can then be launched. However, since a GUI is being tested and that the server used to run these tests does not have a screen, we need one last tool to simulate a virtual screen. This tool is X virtual frame buffer ([xvfb-run](https://manpages.ubuntu.com/manpages/xenial/man1/xvfb-run.1.html)) and allows a headless (no screen) Linux computer to run GUI applications even if it does not have a display. Using the following, the tests can be launched and will make sure that on every push to the repository that the tests will launch.
 
 ```
 xvfb-run -a -s "-screen 0 1920x1200x24" py.test . -v
@@ -91,16 +91,16 @@ xvfb-run -a -s "-screen 0 1920x1200x24" py.test . -v
 [Pre-commit](https://pre-commit.com) is a tool that makes sure that commits meet certain criteria. It can be set up to check for different things. Moreover, it can be set up locally by using a pre-commit configuratin file and run as a Github action.
 
 Among other things, pre-commit will:
-* Check if the commit added a large file
-* Check python syntax
-* Check if there are merge conflicts
-* Check GitHub actions config files
+* Check if the commit added a large file.
+* Check python syntax.
+* Check if there are merge conflicts.
+* Check GitHub actions config files.
 
 To locally check these specific things, I have included a [local configuration file](other/.pre-commit-config.yaml) in the plugin repository that will reject a commit if a requirement is not met. I have also included a GitHub Actions [configuration file](github_actions/pre-commit.yml) that will look at the commit and throw an error if there is a requirement that is not met on a push to the repository.
 
 #### Deliverable 3: Dockerfile
 
-I have also set up a [Dockerfile](docker/Dockerfile) that contains instructions about what that will be performed automatically when setting up the Docker container. These step include copying the local repository in the container and installing necessary dependencies such as "curl", "vim" and "Xvfb" that will be used by the installer of the testing suite. The script that downloads and installs Shimming Toolbox, FSLeyes and the GUI is then automatically ran and [Conda](https://docs.conda.io/en/latest/) is then initialized so that a user only has to run the tests. After cloning the Shimming Toolbox plugin repository and installing Docker, the only steps remaining are to navigate through the command line and perform the commands to build and launch the docker container:
+I have also set up a [Dockerfile](docker/Dockerfile) that contains instructions that will be performed automatically when setting up the Docker container. These steps include copying the local repository in the container and installing necessary dependencies such as "curl", "vim" and "Xvfb" that will be used by the installer of the testing suite. The script that downloads and installs Shimming Toolbox, FSLeyes and the GUI is then automatically ran and [Conda](https://docs.conda.io/en/latest/) is then initialized so that a user only has to run the tests. After cloning the Shimming Toolbox plugin repository and installing Docker, the only steps remaining are to navigate to the command line and perform the commands to build and launch the docker container:
 
 ```
 cd fsleyes-plugin-shimming-toolbox
